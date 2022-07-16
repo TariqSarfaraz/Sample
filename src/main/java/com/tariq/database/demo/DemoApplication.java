@@ -1,6 +1,6 @@
 package com.tariq.database.demo;
 
-import com.tariq.database.demo.dao.PersonJdbcDao;
+import com.tariq.database.demo.dao.PersonJpaDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ public class DemoApplication implements CommandLineRunner {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    PersonJdbcDao dao;
+    PersonJpaDao dao;
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
@@ -22,6 +22,6 @@ public class DemoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info(" List of Persons -> {}", dao.findAll());
+        logger.info(" Person with Id - 10001 -> {}", dao.findById(10001));
     }
 }
