@@ -16,13 +16,5 @@ public class Person {
     private String location;
     private Date birthDate;
 
-    @Override
-    public String toString() {
-        return "\nPerson{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", location='" + location + '\'' +
-                ", birthDate=" + birthDate +
-                '}';
-    }
+   
 }
