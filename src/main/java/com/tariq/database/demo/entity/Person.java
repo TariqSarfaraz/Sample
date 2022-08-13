@@ -1,5 +1,7 @@
 package com.tariq.database.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class Person {
@@ -21,9 +24,4 @@ public class Person {
     private String location;
     private Date birthDate;
 
-    public Person(String name, String location, Date birthDate) {
-        this.name = name;
-        this.location = location;
-        this.birthDate = birthDate;
-    }
 }
